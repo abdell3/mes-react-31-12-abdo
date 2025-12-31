@@ -28,11 +28,13 @@ export const useTodos = () => {
 };
 
 // Hook pour ajouter un todo
-export const useAddTodo = (useTodos) => {
-  const addTodo = (var) => {
-    useTodos.setTodos((var) => [
+export const useAddTodo = (setTodos) => {
+  const addTodo = (x) => {
+    setTodos((var) => [
       ...var,
-      useTodos.todos
+      {
+        todos
+      }
     ]);
   }
   return addTodo
