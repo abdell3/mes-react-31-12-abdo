@@ -13,7 +13,7 @@ export const filterSlice = createSlice({
   name: 'filter',
   initialState,
   reducers: {
-    setFilter: (state, action: PayloadAction<FilterValue>) => {
+    setFilter: (state:string, action: PayloadAction<FilterValue>) => {
       state.value = action.payload;
     },
   },

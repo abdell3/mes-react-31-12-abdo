@@ -1,8 +1,8 @@
 import { useTodos, useToggleTodo } from '../hooks/useTodos';
 import { useAppSelector } from '../store/hooks';
-
+  
 const TodoList = () => {
-  const { data: todos, isLoading, isError } = useTodos();
+  const { data: fetchTodos, isLoading, isError } = useTodos();
   const toggleMutation = useToggleTodo();
   const filterValue = useAppSelector((state) => state.filter.value);
 
@@ -24,7 +24,7 @@ const TodoList = () => {
   }
 
   // Filtrage des todos en fonction du filtre Redux
-  const filteredTodos = todos?.filter((todo) => {
+  const filteredTodos = fetchTodos?.filter((todo) => {
     if (filterValue === 'active') return !todo.completed;
     if (filterValue === 'completed') return todo.completed;
     return true; // 'all'
