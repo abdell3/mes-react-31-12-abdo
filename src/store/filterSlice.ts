@@ -14,7 +14,7 @@ export const filterSlice = createSlice({
   initialState,
   reducers: {
     setFilter: (state:string, action: PayloadAction<FilterValue>) => {
-      state.value = action.payload;
+      state.valueOf = action.payload;
     },
   },
 });
