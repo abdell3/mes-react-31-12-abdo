@@ -31,7 +31,8 @@ export const useTodos = () => {
 export const useAddTodo = (useTodos) => {
   const addTodo = (var) => {
     useTodos.setTodos((var) => [
-      
+      ...var,
+      useTodos.todos
     ]);
   }
   return addTodo
