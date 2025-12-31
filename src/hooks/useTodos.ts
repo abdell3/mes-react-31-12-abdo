@@ -1,4 +1,5 @@
 import type { Todo } from "../types/todo";
+import { useState, useEffect, useContext } from 'react';
 
 // Données initiales simulées
 const initialTodos: Todo[] = [
@@ -17,10 +18,22 @@ const fetchTodos = (): Promise<Todo[]> => {
 };
 
 // Hook pour récupérer les todos
-export const useTodos = () => {};
+export const useTodos = () => {
+  const [todos, setTodos] = useState(fetchTodos);
+
+  return {
+    todos,
+    setTodos
+  }
+};
 
 // Hook pour ajouter un todo
-export const useAddTodo = () => {};
+export const useAddTodo = (setTodos) => {
+  const addTodo = () => {
+    
+  }
+
+};
 
 // Hook pour basculer l'état completed d'un todo
 export const useToggleTodo = () => {};
