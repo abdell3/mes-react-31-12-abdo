@@ -28,11 +28,13 @@ export const useTodos = () => {
 };
 
 // Hook pour ajouter un todo
-export const useAddTodo = (setTodos) => {
-  const addTodo = () => {
-    
+export const useAddTodo = (useTodos) => {
+  const addTodo = (var) => {
+    useTodos.setTodos((var) => [
+      
+    ]);
   }
-
+  return addTodo
 };
 
 // Hook pour basculer l'état completed d'un todo
